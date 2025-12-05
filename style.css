@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6b4f3f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #6b4f3f;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 1.6rem;
+}
+
+.nav-links li a:hover {
+  color: #d2691e;
+}
+
+/* Burger menu for mobile */
+.burger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('images/nathan-dumlao-XOhI_kW_TaM-unsplash.jpg') center/cover no-repeat; 
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: rgba(184, 243, 35, 0.67);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  opacity: 0;
+  animation: fadeUp 2s forwards;
+  margin-bottom: 50px; 
+}
+@media (max-width: 768px) {
+  .btn {
+    margin-bottom: 20px; 
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text p {
+  color:rgb(190, 135, 242);
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+ 
+}
+
+.btn {
+  background: #d2691e;
+  color: white;
+  padding: 1.5rem 1.7rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+
+}
+
+.btn:hover {
+  background: #f29c39;
+}
+
+/* Menu Section */
+.menu {
+  background: #f7f5f0;
+  text-align: center;
+  object-fit: cover;
+  width: 100%;
+ 
+}
+
+.menu h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #8d6046;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+  height:auto;
+  transition: transform 0.3s;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .menu-card {
+    width: 90%;
+  }
+
+  .menu-card img {
+    height: 180px;
+  }
+}
+
+.menu-card h3 {
+  margin: 1rem 0;
+  color: #6b4f3f;
+  font-size: 2rem;
+}
+
+.menu-card p {
+  padding: 0 1rem 1rem 1rem;
+  color: #3a3a3a;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.contact h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #6b4f3f;
+}
+
+/* Footer */
+footer {
+  background: #6b4f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .menu-items {
+    display: flex;
+  flex-wrap: wrap;     /* Allows wrapping but stays horizontal */
+  justify-content: center;
+  gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu-items {
+    flex-direction: row;    /* Keep horizontal even on phone */
+    flex-wrap: wrap;        /* Allow 2 in one row if needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background: white;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    padding-top: 5rem;
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .menu-items {
+    flex-direction:row;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
